@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutter_geo_localizacao/main.dart';
 
+
 void main() {
   testWidgets('Menu inicial exibe os testes disponíveis',
       (WidgetTester tester) async {

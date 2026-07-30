@@ -71,8 +71,8 @@ class _TesteBackgroundScreenState extends State<TesteBackgroundScreen> {
           Container(
             width: double.infinity,
             color: _monitorando
-                ? Colors.green.withOpacity(0.1)
-                : Colors.grey.withOpacity(0.1),
+                ? Colors.green.withValues(alpha: 0.1)
+                : Colors.grey.withValues(alpha: 0.1),
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

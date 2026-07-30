@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'telas/teste_permissoes_screen.dart';
 import 'telas/teste_background_screen.dart';
+import 'telas/teste_geofence_screen.dart';
 
 void main() {
   runApp(const GeoLocalizacaoApp());
@@ -54,6 +55,13 @@ class MenuTestesScreen extends StatelessWidget {
             subtitulo: 'Monitoramento contínuo: minimizado vs encerrado',
             icone: Icons.blur_on,
             destino: const TesteBackgroundScreen(),
+          ),
+          _itemMenu(
+            context,
+            titulo: '004 - Geofence',
+            subtitulo: 'ENTER / EXIT / DWELL, mesmo com app encerrado',
+            icone: Icons.fence,
+            destino: const TesteGeofenceScreen(),
           ),
         ],
       ),
@@ -134,7 +142,7 @@ class _TesteLocalizacaoScreenState extends State<TesteLocalizacaoScreen> {
       }
 
       final posicao = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high,
+        locationSettings: const LocationSettings(accuracy: LocationAccuracy.high),
       );
 
       setState(() {
@@ -190,7 +198,7 @@ class _TesteLocalizacaoScreenState extends State<TesteLocalizacaoScreen> {
   Widget _buildCardResultado() {
     return Card(
       elevation: 0,
-      color: Colors.blue.withOpacity(0.08),
+      color: Colors.blue.withValues(alpha: 0.08),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -212,7 +220,7 @@ class _TesteLocalizacaoScreenState extends State<TesteLocalizacaoScreen> {
   Widget _buildCardErro() {
     return Card(
       elevation: 0,
-      color: Colors.red.withOpacity(0.08),
+      color: Colors.red.withValues(alpha: 0.08),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(

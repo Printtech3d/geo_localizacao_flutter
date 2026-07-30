@@ -83,7 +83,7 @@ class _TestePermissoesScreenState extends State<TestePermissoesScreen> {
             if (_log != null)
               Card(
                 elevation: 0,
-                color: Colors.blueGrey.withOpacity(0.08),
+                color: Colors.blueGrey.withValues(alpha: 0.08),
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Text(_log!),
@@ -110,7 +110,7 @@ class _TestePermissoesScreenState extends State<TestePermissoesScreen> {
   Widget _cardStatus() {
     return Card(
       elevation: 0,
-      color: Colors.blue.withOpacity(0.08),
+      color: Colors.blue.withValues(alpha: 0.08),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
